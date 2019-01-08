@@ -104,10 +104,6 @@ file."
 (define-key
   (current-global-map) [remap find-file-other-frame] 'find-file-other-frames)
 
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
 (global-undo-tree-mode)
 
 (provide 'SH-global) ; this tells .emacs that (require 'SH-global) is satisfied
