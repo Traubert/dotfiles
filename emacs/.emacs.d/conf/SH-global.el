@@ -37,7 +37,7 @@
 ;; separately, in Debian it's in emacs-goodies-el.
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-dark-blue2) ; matter of taste
+(load-theme 'sanityinc-tomorrow-day t) ; matter of taste
  
 ;; make the screen blink for attention, also works with emacs -nw
 (setq visible-bell t)
