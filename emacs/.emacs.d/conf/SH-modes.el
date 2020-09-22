@@ -22,14 +22,6 @@ header"
 (setq c-basic-offset 4)
 (c-set-offset 'innamespace 0)
  
-;; scheme
-;; note: there used to be some custom Scheme stuff here,
-;; but I've replaced all that by loading quack, an extra package
-;; (...or should that somehow *be* the scheme mode?)
-(add-hook 'scheme-mode-hook
-	  '(lambda()
-	     (require 'quack)))
-
 (add-hook 'python-mode-hook
 	  '(lambda ()
 	     (setq python-indent 4)))

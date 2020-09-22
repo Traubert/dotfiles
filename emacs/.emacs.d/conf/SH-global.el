@@ -33,12 +33,8 @@
 ;; (this directory has to exist and be writable)
 (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
  
-;; Color themes. The color-theme package usually needs to be installed
-;; separately, in Debian it's in emacs-goodies-el.
-(require 'color-theme)
-(color-theme-initialize)
-(load-theme 'sanityinc-tomorrow-day t) ; matter of taste
- 
+(load-theme 'deeper-blue t)
+
 ;; make the screen blink for attention, also works with emacs -nw
 (setq visible-bell t)
 
