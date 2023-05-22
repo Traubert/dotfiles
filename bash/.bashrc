@@ -120,3 +120,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# When cding, if the target is not a directory, check to see if it's a variable, then cd to that
+shopt -s cdable_vars
