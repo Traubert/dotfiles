@@ -9,6 +9,13 @@
 (setq rm-blacklist '("undo-tree-mode"))
 (smart-mode-line-enable)
 (column-number-mode)
+
+(drag-stuff-global-mode 1)
+(define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
+(define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
+(define-key drag-stuff-mode-map (drag-stuff--kbd 'right) 'drag-stuff-right)
+(define-key drag-stuff-mode-map (drag-stuff--kbd 'left) 'drag-stuff-left)
+
 (toggle-scroll-bar -1) ; no scroll bar
 (tool-bar-mode -1) ; no tool bar
 (global-font-lock-mode t)
