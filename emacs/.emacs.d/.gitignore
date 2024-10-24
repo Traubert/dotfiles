@@ -1,0 +1,5 @@
+auto-save-list/
+emacs-backup/
+undo/
+transient/
+session.*
