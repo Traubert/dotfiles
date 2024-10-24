@@ -56,8 +56,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    function parse_git_dirty {
+	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
+    }
+    function parse_git_branch {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
+    }
+
+    PS1='\[\e[\033[01;34m\]\u@\h \[\e[38;5;211m\]\w\[\e[\033[38;5;48m\] $(parse_git_branch)\[\e[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
