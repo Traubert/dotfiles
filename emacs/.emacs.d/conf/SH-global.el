@@ -130,5 +130,6 @@ file."
   (current-global-map) [remap find-file-other-frame] 'find-file-other-frames)
 
 (global-undo-tree-mode)
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 (provide 'SH-global) ; this tells .emacs that (require 'SH-global) is satisfied
