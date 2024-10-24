@@ -23,8 +23,10 @@ header"
 (c-set-offset 'innamespace 0)
  
 (add-hook 'python-mode-hook
-	  '(lambda ()
-	     (setq python-indent 4)))
+	  (lambda ()
+	    (setq python-indent 4)
+	    (require 'python-black)
+	    (python-black-on-save-mode)))
 
 ;; a find-file-other-frame for dired
 (defun dired-find-file-other-frame ()
