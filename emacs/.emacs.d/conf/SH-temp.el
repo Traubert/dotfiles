@@ -1,3 +1,7 @@
+(when (member "Segoe UI Emoji" (font-family-list))
+  (set-fontset-font
+    t 'symbol (font-spec :family "Segoe UI Emoji") nil 'prepend))
+
 (defun detexify ()
   "Remove tex comments and put lines in paragraphs"
   
