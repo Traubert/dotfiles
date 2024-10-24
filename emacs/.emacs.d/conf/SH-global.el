@@ -3,8 +3,12 @@
 (fset 'yes-or-no-p 'y-or-n-p) ; no yes-or-no prompts
 
 (setq transient-mark-mode t) ; selection coloring and stuff
-(setq line-number-mode t)
-(setq column-number-mode t)
+
+;(linum-relative-global-mode 'display-line-numbers-mode)
+(global-display-line-numbers-mode)
+(setq rm-blacklist '("undo-tree-mode"))
+(smart-mode-line-enable)
+(column-number-mode)
 (toggle-scroll-bar -1) ; no scroll bar
 (tool-bar-mode -1) ; no tool bar
 (global-font-lock-mode t)
