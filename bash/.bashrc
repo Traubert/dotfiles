@@ -138,6 +138,12 @@ elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+if [ -x "$(command -v psformat)" ]; then
+    function ps() {
+	/bin/ps $@ | psformat
+    }
+fi
+
 
 # When cding, if the target is not a directory, check to see if it's a variable, then cd to that
 shopt -s cdable_vars

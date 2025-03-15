@@ -4,10 +4,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))
+   '("45631691477ddee3df12013e718689dafa607771e7fd37ebc6c6eb9529a8ede5" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))
  '(ispell-dictionary nil)
  '(package-selected-packages
-   '(drag-stuff linum-relative php-mode use-package smart-mode-line nginx-mode python-black go-mode typescript-mode dockerfile-mode yaml-mode undo-tree magit))
+   '(apache-mode async bar-cursor bm boxquote browse-kill-ring color-theme-modern company compat counsel csv-mode dash diminish eproject folding graphviz-dot-mode helm helm-core htmlize initsplit ivy magit-section markdown-mode popup session smex swiper tabbar with-editor drag-stuff linum-relative php-mode use-package smart-mode-line nginx-mode python-black typescript-mode dockerfile-mode yaml-mode undo-tree magit))
  '(quack-default-program "csi"))
 
 (custom-set-faces
@@ -49,4 +49,4 @@ There are two things you can do about this warning:
 (require 'SH-global)
 (require 'SH-modes)
 (require 'SH-temp)
-(put 'upcase-region 'disabled nil)
+
