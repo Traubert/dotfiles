@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+'''
+Format output from ps to have human-readable sizes
+'''
+import csv, sys
+
+def memfmt(kibs):
+    kibs = int(kibs)
+    if kibs < 1024:
+        return f'{kibs}K'
+    mibs = kibs / 1024
+    if mibs < 10:
+        return f'{mibs:.1f}M'
+    if mibs < 1024:
+        return f'{round(mibs)}M'
+    gibs = mibs / 1024
+    return f'{gibs:.1f}G'
+
+with sys.stdin as csvfile:
+    reader = csv.DictReader(sys.stdin, delimiter = ' ', skipinitialspace = True)
+    rows = [reader.fieldnames]
+    for row in reader:
+        if None in row:
+            row['COMMAND'] += " " + " ".join(row[None])
+            del row[None]
+        if 'VSZ' in row:
+            row['VSZ'] = memfmt(row['VSZ'])
+        if 'RSS' in row:
+            row['RSS'] = memfmt(row['RSS'])
+        rows.append(list(row.values()))
+lens = []
+for col in zip(*rows):
+    lens.append(max([len(v) for v in col]))
+fmtstrings = "  ".join(["{:<" + str(l) + "}" for l in lens[:-1]]) + "  {}"
+for row in rows:
+    print(fmtstrings.format(*row))
