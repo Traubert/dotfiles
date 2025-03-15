@@ -1,5 +1,13 @@
-auto-save-list/
-emacs-backup/
-undo/
-transient/
+auto-save-list
+emacs-backup
+undo
+transient
 session.*
+/elpa/
+/server/
+/network-security.data
+.cask/
+dist/
+/auto/
+/eshell/history
+/eshell/lastdir
